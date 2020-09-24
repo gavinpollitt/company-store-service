@@ -1,0 +1,20 @@
+spring:
+    datasource:
+        driverClassName: org.h2.Driver
+        url: jdbc:h2:tcp://localhost:1521/gav
+        username: 
+        password:
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                format_sql: false
+                show_sql: true
+                use_sql_comments: false
+server:
+    port: 8081 
+queue:
+    maxEntries: 6
+    timeout: 5

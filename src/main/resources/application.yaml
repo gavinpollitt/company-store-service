@@ -1,0 +1,23 @@
+spring:
+    datasource:
+        driverClassName: org.h2.Driver
+        password: qman
+        url: jdbc:h2:file:~/temp/data/q
+        username: qman
+    h2:
+        console:
+            enabled: true
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                format_sql: false
+                show_sql: true
+                use_sql_comments: false
+server:
+    port: 8085 
+queue:
+    maxEntries: 5
+    timeout: 5
