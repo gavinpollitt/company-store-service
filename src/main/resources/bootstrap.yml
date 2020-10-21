@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: qserver-pi
+  cloud:
+    config:
+      uri: http://spring-conf-dep.config:8888
