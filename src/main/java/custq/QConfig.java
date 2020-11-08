@@ -17,22 +17,18 @@ public class QConfig {
 	private static Integer TIMEOUT;
 
 	public static Integer getMaxEntries() {
-		System.out.println("GAVSTER---->returning maxEntries:" + MAX_ENTRIES); 
 		return MAX_ENTRIES;
 	}
 
 	public void setMaxEntries(Integer maxEntries) {
-		System.out.println("GAVSTER---->maxEntries:" + maxEntries); 
 		MAX_ENTRIES = maxEntries;
 	}
 
 	public static Integer getTimeout() {
-		System.out.println("GAVSTER---->returning TIMOUT:" + TIMEOUT); 
 		return TIMEOUT;
 	}
 
 	public void setTimeout(Integer timeout) {
-		System.out.println("GAVSTER---->timeout:" + timeout); 
 		TIMEOUT = timeout;
 	}
 }

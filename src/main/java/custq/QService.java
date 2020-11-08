@@ -8,6 +8,9 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,6 +30,7 @@ import org.springframework.context.annotation.DependsOn;
 @RequestMapping("/queueService")
 @DependsOn({"QConfig"})
 public class QService {
+       	private Logger logger = LoggerFactory.getLogger(QService.class);
 
 	@Autowired
 	private CompanyRepository companyRepository;
@@ -58,6 +62,7 @@ public class QService {
 		if (!added) {
 			throw new QueueFullException();
 		}
+               logger.info("Addition of company:" + c.getName() + " confirmed by queue");
 	}
 
 	/**
@@ -81,6 +86,7 @@ public class QService {
 			throw new QueueEmptyException();
 		}
 
+                logger.info("Rerieval of company:" + got.getName() + " confirmed by queue");
 		return got;
 	}
 
